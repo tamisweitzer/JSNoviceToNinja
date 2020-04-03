@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>JS Cheatsheet</title>
+  <style>
+    body { font-family: sans-serif; }
+    .wrapper { max-width: 600px;  padding: 1rem; border: 1px solid #eee; margin: 0 auto; }
+    .monospace { font-family: monospace; }
+    code { background-color: #fef5e7; padding: 0.5rem; line-height: 1.6rem; }
+    .code-text { font-family: monospace; font-size: 1.1rem;  color: #555; }
+  </style>
+</head>
+<body>
+
+  <div class="wrapper">
+
+    <div class="chapter02">
+      <h2>Chapter 2</h2>
+
+      <h3>Data Types</h3>
+      <ul>
+        <li>string</li>
+        <li>number</li>
+        <li>Boolean</li>
+        <li>undefined</li>
+        <li>null</li>
+        <li>object</li>
+      </ul>
+    </div>
+
+    <h4>typeof</h4>
+    <p>You can use the <span class="code-text">typeof</span> operator to find out the type of a value</p>
+    <pre>
+      <code>typeof 10</code>
+      <code><< "number"</code>
+    </pre>
+
+    <h3>String Properties and Methods</h3>
+
+    <h4>string.length</h4>
+    <p>The .length property will return the length of the string as an integer</p>
+    <pre>
+      <code>"Mary".length</code>
+      <code><< 4</code>
+    </pre>
+
+    <h4>string.toUpperCase()</h4>
+    <p>The .toUpperCase() method returns a string in all uppercase letters</p>
+    <pre>
+      <code>let name = "mary"</code>
+      <code>name.toUpperCase()</code>
+      <code><< MARY</code>
+    </pre>
+
+    <h4>string.toLowerCase()</h4>
+    <p>The .toLowerCase() method returns a string in all lowercase letters</p>
+    <pre>
+      <code>name.toLowerCase()</code>
+      <code><< mary</code>
+    </pre>
+
+    <h4>chartAt()</h4>
+    <p>To find which character is at a specified position in the a string, use the charAt() method</p>
+    <pre>
+      <code>name.charAt(2)</code>
+      <code><< "r"</code>
+    </pre>
+
+    <h4>indexOf()</h4>
+    <p>The indexOf() method will tell you the index of a specified character</p>
+    <pre>
+      <code>name.indexOf('r')</code>
+      <code><< 2</code>
+    </pre>
+    <p>If the specified character is not found in the string, the method will return -1</p>
+    <pre>
+      <code>name.indexOf('p')</code>
+      <code><< -1</code>
+    </pre>
+
+    <h4>lastIndexOf()</h4>
+    <p>The lastIndexOf() method is similar to the indexOf() method, but this one starts from the end of the string</p>
+    <pre>
+      <code>let llama = 'llama'</code>
+      <code>llama.lastIndexOf('l')</code>
+      <code><< 1</code>
+    </pre>
+
+    <p>Compare indexOf() and lastIndexOf(). Remember that indexOf() starts looking at the start of the string</p>
+    <pre>
+      <code>llama.indexOf('l') </code>
+      <code><< 0</code>
+    </pre>
+
+    <p>These methods are case-sensitive. </p>
+    <pre>
+      <code>llama.indexOf('L') </code>
+      <code><< -1</code>
+    </pre>
+
+
+    <h4>concat()</h4>
+    <p>The concat() method will concatencate two strings</p>
+    <pre>
+      <code>'Hello'.concat('World')</code>
+      <code><< HelloWorld</code>
+    </pre>
+
+    <p>You can chain more than one string. Here we concatencate a space between 'Hello' and 'World'</p>
+    <pre>
+      <code>'Hello'.concat(' ').concat('World')</code>
+      <code><< Hello World</code>
+    </pre>
+
+    <p>You can even chain unrelated methods</p>
+    <pre>
+      <code>'Hello'.concat(' ').concat('World').toUpperCase()</code>
+      <code><< HELLO WORLD</code>
+    </pre>
+
+    <h4>trim()</h4>
+    <p>The trim() method will remove whitespace from the beginning and end of the string</p>
+    <pre>
+      <code>"  Hello      ".trim();</code>
+      <code><< "Hello"</code>
+    </pre>
+
+
+    <!-- Numbers -->
+
+    <h3>Number Properties and Methods</h3>
+    <p>Both integers and floating point numbers are of type <span class="code-text">integer</span></p>
+
+    <h4>toExponential()</h4>
+    <p>When using dot notation with numbers, it is best to use two dots to prevent confusion with decimal points</p>
+    <pre>
+      <code>5..toExponential()</code>
+      <code><< 5e+0</code>
+    </pre>
+
+    <pre>
+      <code>5 .toExponential()</code>
+      <code><< 5e+0</code>
+    </pre>
+
+    <pre>
+      <code>5.0.toExponential()</code>
+      <code><< 5e+0</code>
+    </pre>
+
+    <pre>
+      <code>(5).toExponential()</code>
+      <code><< 5e+0</code>
+    </pre>
+
+
+    <h4>toFixed()</h4>
+    <p>Use the .toFixed() method to control the number of decimal places. This will return a string.</p>
+    <pre>
+      <code>3.1415926.toFixed(3)</code>
+      <code>3.142</code>
+    </pre>
+
+
+    <h4>toPrecision()</h4>
+    <p>The toPrecision() method rounds a number to a fixed number of significant figures and returns it as a string.</p>
+    <pre>
+      <code>3.1315926.toPrecision(3)</code>
+      <code><< 3.13</code>
+    </pre>
+
+
+    <h4>Arithmetic Operators</h4>
+    <p></p>
+    <pre>
+      <code>+ - / * % </code>
+      <code></code>
+    </pre>
+
+
+    <h4>Converting Strings to Numbers</h4>
+    <p>These are ways to convert a string to a number</p>
+    <pre>
+      <code>"5" * 1</code>
+      <code>+"5"</code>
+      <code>Number("5")</code>
+    </pre>
+
+    <h4>Converting Numbers to Strings</h4>
+    <p></p>
+    <pre>
+      <code>3 + ""</code>
+      <code>String(3)</code>
+      <code>10..toString(10)  // 10 for decimal</code>
+    </pre>
+
+    <h4>Parsing Numbers</h4>
+    <p>The parseInt() and parseFloat() functions can parse a string into an integer or a float, respectively</p>
+    <p class="code-text">parseInt(number, { optional: base })</p>
+    <pre>
+      <code>parseInt("10", 10)  // 10</code>
+      <code>parseInt("10", 2)  // 2</code>
+
+    </pre>
+
+    <p>If the string starts with a number and contains text, it will only attempt to parse the numbers until it finds a letter</p>
+    <pre>
+      <code>let address = '123 Main St'</code>
+      <code>parseInt(address)</code>
+      <code><< 123</code>
+    </pre>
+
+    <p>Using parseInt() on a decimal will truncate everything after the decimal</p>
+    <pre>
+      <code>parseInt(3.14)</code>
+      <code><< 3</code>
+    </pre>
+
+    <p>parseFloat() works similar to parseInt()</p>
+
+    <pre>
+      <code>parseFloat("2.9")</code>
+      <code>2.9</code>
+    </pre>
+
+
+
+
+  </div><!-- /.wrapper -->
+</body>
+</html>
